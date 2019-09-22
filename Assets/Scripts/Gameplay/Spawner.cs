@@ -6,11 +6,9 @@ public class Spawner : MonoBehaviour
 {
     public static Spawner Instance;
     public float SpawnRate = 1f;
-
     private float _nextTimeToSpawn = 0f;
 
     public bool IsSpawnable = true;
-
 
     private void Awake()
     {

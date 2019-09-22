@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 
     private float _movement = 0f;
 
+    public GameObject WindowFail;
+
     private void Update()
     {
         _movement = Input.GetAxisRaw("Horizontal");
@@ -30,6 +32,6 @@ public class Player : MonoBehaviour
     private IEnumerator DelayedPause()
     {
         yield return new WaitForSecondsRealtime(.25f);
-    
+        WindowFail.SetActive(true);
     }
 }

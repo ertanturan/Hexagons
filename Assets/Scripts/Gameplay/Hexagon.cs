@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hexagon : MonoBehaviour,IPooledObject
+public class Hexagon : MonoBehaviour, IPooledObject
 {
 
     private Rigidbody2D _rb;
@@ -11,11 +11,12 @@ public class Hexagon : MonoBehaviour,IPooledObject
 
     void Start()
     {
- Init();
+        Init();
     }
 
     private void Init()
     {
+
         _rb = GetComponent<Rigidbody2D>();
         _rb.rotation = Random.Range(0f, 360f);
         transform.localScale = Vector3.one * 10f;
@@ -25,7 +26,7 @@ public class Hexagon : MonoBehaviour,IPooledObject
     {
         transform.localScale -= Vector3.one * ShrinkSpeeed * Time.deltaTime;
 
-        if (transform.localScale.x<.5f)
+        if (transform.localScale.x < .5f)
         {
             ObjectPooler.Instance.Despawn(PooledObjectType.Hexagon);
         }
