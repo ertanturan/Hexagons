@@ -25,7 +25,7 @@ public class Hexagon : MonoBehaviour
 
         if (transform.localScale.x<.5f)
         {
-            Destroy(gameObject);
+            ObjectPooler.Instance.Despawn(GetComponent<PooledObject>().Type);
         }
     }
 }
